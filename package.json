@@ -1,0 +1,33 @@
+{
+  "name": "get-xml",
+  "version": "0.0.1",
+  "description": "Parse XML in Node and the browser seamlessly",
+  "main": "index.js",
+  "browser": "browser.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scienceai/get-xml.git"
+  },
+  "keywords": [
+    "XML",
+    "parse",
+    "bundler",
+    "browserify"
+  ],
+  "author": "Robin Berjon <robin@standardanalytics.io>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/scienceai/get-xml/issues"
+  },
+  "homepage": "https://github.com/scienceai/get-xml",
+  "devDependencies": {
+    "eslint": "1.10.3",
+    "mocha": "2.4.5"
+  },
+  "dependencies": {
+    "xmldom": "^0.1.22"
+  }
+}
