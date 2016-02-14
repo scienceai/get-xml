@@ -1,6 +1,6 @@
 
 exports.parseString = function (str) {
-  if ('DOMParser' in window) return new DOMParser().parseFromString(str);
+  if ('DOMParser' in window) return new DOMParser().parseFromString(str, 'application/xml');
   if ('ActiveXObject' in window) {
     var doc = new ActiveXObject('Microsoft.XMLDOM');
     xmlDoc.async = 'false';
