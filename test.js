@@ -9,4 +9,20 @@ describe('Parsing XML', function () {
     assert('documentElement' in doc, 'duck types with documentElement');
     assert.equal(doc.documentElement.localName, 'foo', 'root element is foo');
   });
+  it('should parse some XML asynchronously', (done) => {
+    var doc = parseString('<foo/>', (err, doc) => {
+      assert.ifError(err);
+      assert(doc, 'there is a Document');
+      assert('documentElement' in doc, 'duck types with documentElement');
+      assert.equal(doc.documentElement.localName, 'foo', 'root element is foo');
+      done();
+    });
+  });
+  it('should report errors', (done) => {
+    var doc = parseString('<foo>HAHAHAHAAHaaaaaaaa…</bar>', (err, doc) => {
+      assert(err, 'there is an Error');
+      assert(!doc, 'there is no document');
+      done();
+    });
+  });
 });
